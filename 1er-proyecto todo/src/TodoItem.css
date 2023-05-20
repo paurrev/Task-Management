@@ -1,0 +1,31 @@
+.todo-item{
+  display: flex;
+  position: relative;
+  width: 328px;
+  background-color: #4380B1;
+  margin: 16px 0px;
+  border-radius: 16px;
+}
+.todo-item_checkbox{
+  margin: 0 10px ;
+}
+.todo-item_text{
+  color: #ffff;
+  font-size: 16px;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+}
+.todo-item_text--completed{
+  text-decoration: line-through;
+  color: #ffffff8a;
+}
+.todo-item_delete{
+  font-family: 'Comfortaa', cursive;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  right: 4px;
+  top: -4px;
+  color: #ffff;
+  font-weight: 700;
+}

@@ -6,22 +6,26 @@ import { CreateTodoButton } from './CreateTodoButton.jsx';
 // import './App.css'
 
 const todos = [
-  { text: 'Cortar cebolla', completed: false },
+  { text: 'Cortar cebolla', completed: true },
   { text: 'Tormar el curso de intro a react', completed: false },
   { text: 'Llorar con la llorona', completed: false },
 ];
 
 export function App() {
   return (
-    <>
-      <TodoCounter />
+    <section className="Todo">
       <TodoSearch />
+      <TodoCounter />
       <TodoList>
         {todos.map((todo) => (
-          <TodoItem key={todo.text} todo={todo.text} />
+          <TodoItem 
+          key={todo.text} 
+          text={todo.text} 
+          completed={todo.completed}
+          />
         ))}
       </TodoList>
       <CreateTodoButton />
-    </>
+    </section>
   );
 }

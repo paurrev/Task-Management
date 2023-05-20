@@ -1,0 +1,20 @@
+.todo-header-task{
+  font-family: 'Comfortaa', cursive;
+}
+
+.todo-header_title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-align: start;
+  margin-bottom: .5rem;
+  text-align: center;
+}
+
+.todo-header-completed{
+  font-size:  1.125rem;
+  font-weight: 600;
+  color: #05C7F2;
+  text-align: center;
+  margin: 0;
+}
