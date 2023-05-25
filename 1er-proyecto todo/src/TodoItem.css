@@ -1,17 +1,72 @@
 .todo-item{
   display: flex;
   position: relative;
-  width: 328px;
+  width: 20.5rem;
   background-color: #4380B1;
-  margin: 16px 0px;
-  border-radius: 16px;
+  margin: 1rem 0rem;
+  border-radius: 1rem;
 }
-.todo-item_checkbox{
-  margin: 0 10px ;
+/* .todo-item_checkbox{
+  margin: 0 .625rem ;
+} */
+.todo-item_checkbox {
+  position: relative;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: .125rem;
+  appearance: none; 
+  margin: auto .625rem;
+  background-color: #bbb;
+  transition: all .3s;
+  border-radius: .625rem;
+}
+
+.todo-item_checkbox::before {
+  content: '';
+  position: absolute;
+  border: solid #fff;
+  display: block;
+  width: .3em;
+  height: .7em;
+  border-width: 0 .2em .2em 0;
+  z-index: 1;
+  opacity: 0;
+  right: calc(50% - .25em);
+  top: calc(50% - .55em);
+  transform: rotate(0deg);
+  transition: all .3s;
+  transform-origin: center center;
+}
+
+.todo-item_checkbox:checked {
+  animation: b .3s ease-in forwards;
+  background-color: #CC075F;
+}
+
+.todo-item_checkbox:checked::before {
+  opacity: 1;
+  transform: rotate(405deg);
+}
+
+@keyframes b {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale(.8) rotateY(180deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateY(360deg);
+  }
 }
 .todo-item_text{
   color: #ffff;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: 'Comfortaa', cursive;
   font-weight: 700;
 }
@@ -22,10 +77,10 @@
 .todo-item_delete{
   font-family: 'Comfortaa', cursive;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
   position: absolute;
-  right: 4px;
-  top: -4px;
+  right: .25rem;
+  top: -0.25rem;
   color: #ffff;
   font-weight: 700;
 }

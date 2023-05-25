@@ -7,10 +7,10 @@ import { CreateTodoButton } from './CreateTodoButton.jsx';
 // import './App.css'
 
 const defaultTodos = [
-  { text: 'Cortar cebolla', completed: true },
+  { text: 'Cortar cebolla', completed: false },
   { text: 'Tormar el curso de intro a react', completed: false },
   { text: 'Llorar con la llorona', completed: false },
-  { text: 'Ver streams', completed: true },
+  { text: 'Ver streams', completed: false },
   { text: 'Cantar', completed: false },
 ];
 
@@ -38,7 +38,20 @@ export function App() {
     });
   }
 
+  //Logica para marcar como completado un ToDo
+  const completeTodo = (text) => {
+    const todoIndex = todos.findIndex((todo) => todo.text === text);
+    const newTodos = [...todos];
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
+    setTodos(newTodos);
+  };
 
+  const deleteTodo = (text) => {
+    const todoIndex = todos.findIndex((todo) => todo.text === text);
+    const newTodos = [...todos];
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  };
 
   return (
     <section className="Todo">
@@ -50,6 +63,8 @@ export function App() {
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
+            onCompleted={() => completeTodo(todo.text)}
+            onDeleted={() => deleteTodo(todo.text)}
           />
         ))}
       </TodoList>
