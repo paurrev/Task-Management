@@ -15,8 +15,22 @@ const defaultTodos = [
 ];
 
 export function App() {
+  // Traemos todos los ToDos almacenados
+  const localStorageTodos = localStorage.getItem('TODOS_V1');
+  // Iniicalizamos la variable de los ToDos
+  let parsedTodos;
+
+  if (!localStorageTodos) {
+    // Si el usuario es nuevo y no existe un item en localStorage, por lo tanto guardamos con un array vacio
+    localStorage.setItem('TODOS_V1', JSON.stringify([]));
+    parsedTodos = [];
+  } else {
+    // Si exite items en localStorage, transformamos el texto a objeto normal de ToDos
+    parsedTodos = JSON.parse(localStorageTodos);
+  }
+
   // Estado inicial de nuestros ToDos
-  const [todos, setTodos] = useState(defaultTodos);
+  const [todos, setTodos] = useState(parsedTodos);
   // Estado inicial de la búsqueda
   const [inputValue, setInputValue] = useState('');
   // Cantidad de ToDos completados
@@ -38,19 +52,30 @@ export function App() {
     });
   }
 
+  // Logica para guardar los ToDos en localStorage
+  const saveTodos = (newTodos) => {
+    // Convertimos a String nuestros ToDos
+    const stringifyTodos = JSON.stringify(newTodos);
+    // Guardamos en localStorage
+    localStorage.setItem('TODOS_V1', stringifyTodos);
+    // Actualizamos el estado de los ToDos
+    setTodos(newTodos);
+  };
+
   //Logica para marcar como completado un ToDo
   const completeTodo = (text) => {
     const todoIndex = todos.findIndex((todo) => todo.text === text);
     const newTodos = [...todos];
-    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
-    setTodos(newTodos);
+    newTodos[todoIndex].completed = true;
+    saveTodos(newTodos);
   };
 
+  //Logica para eliminar un ToDo
   const deleteTodo = (text) => {
     const todoIndex = todos.findIndex((todo) => todo.text === text);
     const newTodos = [...todos];
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
+    saveTodos(newTodos);
   };
 
   return (
