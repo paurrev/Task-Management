@@ -13,6 +13,7 @@ function TodoProvider(props){
   } = useLocalStorage('TODOS_V1', []);
   // Estado inicial de la búsqueda
   const [inputValue, setInputValue] = useState('');
+  const [openModal, setOpenModal] = useState(false)
   // Cantidad de ToDos completados
   const completedTodos = todos.filter((todo) => todo.completed).length;
   // Cantidad de ToDos totales
@@ -59,7 +60,9 @@ function TodoProvider(props){
       setInputValue,
       searchedTodos,
       completeTodo,
-      deleteTodo
+      deleteTodo,
+      openModal,
+      setOpenModal,
     }}>
       {props.children}
     </TodoContext.Provider>

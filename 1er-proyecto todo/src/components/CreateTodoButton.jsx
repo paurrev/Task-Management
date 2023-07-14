@@ -1,15 +1,12 @@
 import './CreateTodoButton.css' 
-const onClickButton = (msg) => {
-  alert(msg)
-}
 
-export function CreateTodoButton (){
+export function CreateTodoButton (props){
+  const onClickButton = () => {
+    props.setOpenModal(true)
+  }
   return (
-    <button 
-    className="todo-button-add"
-    onClick={() => onClickButton('Aquí se deberia de abrir la modal')}
-    >
-    + add new task
+    <button className="todo-button-add" onClick={onClickButton}>
+      + add new task
     </button>
-  )
+  );
 }
