@@ -6,6 +6,7 @@ import { CreateTodoButton } from './components/CreateTodoButton.jsx';
 import { useContext } from 'react';
 import { TodoContext } from './components/Context/index.jsx';
 import { Modal } from './Modal/modal.jsx';
+import { TodoForm } from './components/TodoForms.jsx';
 
 
 export function AppUI() {
@@ -40,7 +41,7 @@ export function AppUI() {
         </TodoList>
         {openModal && (
           <Modal>
-            <p>HOLAAAA</p>
+            <TodoForm/>
           </Modal>
         )}
         <CreateTodoButton  setOpenModal={setOpenModal}/>

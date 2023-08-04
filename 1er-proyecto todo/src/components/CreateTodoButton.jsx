@@ -1,9 +1,9 @@
-import './CreateTodoButton.css' 
+import './CreateTodoButton.css';
 
-export function CreateTodoButton (props){
+export function CreateTodoButton(props) {
   const onClickButton = () => {
-    props.setOpenModal(true)
-  }
+    props.setOpenModal(true);
+  };
   return (
     <button className="todo-button-add" onClick={onClickButton}>
       + add new task
