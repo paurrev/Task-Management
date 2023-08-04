@@ -1,22 +1,22 @@
 import './TodoItem.css';
-export function TodoItem(props) {
+export function TodoItem(onCompleted, completed, text, onDeleted) {
   return (
     <li className="todo-item">
       <input
         className={'todo-item_checkbox'}
         type="checkbox"
-        onClick={props.onCompleted}
+        onClick={onCompleted}
       />
       <p
         className={`todo-item_text ${
-          props.completed && 'todo-item_text--completed'
+          completed && 'todo-item_text--completed'
         }`}
       >
-        {props.text}
+        {text}
       </p>
       <span 
       className="todo-item_delete" 
-      onClick={props.onDeleted}>
+      onClick={onDeleted}>
         X
       </span>
     </li>
