@@ -27,8 +27,8 @@ function TodoProvider(props){
     searchedTodos = todos;
   } else {
     searchedTodos = todos.filter((todo) => {
-      const todoText = todo.text.toLowerCase();
-      const inputValueText = inputValue.toLowerCase();
+      const todoText = todo.text.toLocaleLowerCase();
+      const inputValueText = inputValue.toLocaleLowerCase();
       return todoText.includes(inputValueText);
     });
   }

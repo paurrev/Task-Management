@@ -1,5 +1,5 @@
-import { TodoProvider } from './components/Context';
-import { AppUI } from './AppUI';
+import { TodoProvider } from './App/logic';
+import { AppUI } from './App/AppUI';
 
 // import './App.css'
 
@@ -13,10 +13,9 @@ import { AppUI } from './AppUI';
 // ];
 
 export function App() {
-
   return (
     <TodoProvider>
-      <AppUI/>
+      <AppUI />
     </TodoProvider>
   );
 }
