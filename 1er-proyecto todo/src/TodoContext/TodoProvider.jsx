@@ -1,19 +1,18 @@
-import { createContext, useState } from "react";
-import { useLocalStorage } from "./useLocalStorage.jsx";
+import { createContext, useState } from 'react';
+import { useLocalStorage } from '../App/useLocalStorage.jsx';
 
-const TodoContext = createContext()
+const TodoContext = createContext();
 
-function TodoProvider(props){
-
+function TodoProvider({children}) {
   const {
     items: todos,
     saveItems: saveTodos,
     loading,
-    error
+    error,
   } = useLocalStorage('TODOS_V1', []);
   // Estado inicial de la búsqueda
   const [inputValue, setInputValue] = useState('');
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
   // Cantidad de ToDos completados
   const completedTodos = todos.filter((todo) => todo.completed).length;
   // Cantidad de ToDos totales
@@ -33,7 +32,6 @@ function TodoProvider(props){
     });
   }
 
-
   //Logica para marcar como completado un ToDo
   const completeTodo = (text) => {
     const todoIndex = todos.findIndex((todo) => todo.text === text);
@@ -51,22 +49,24 @@ function TodoProvider(props){
   };
 
   return (
-    <TodoContext.Provider value={{
-      loading,
-      error,
-      totalTodos,
-      completedTodos,
-      inputValue,
-      setInputValue,
-      searchedTodos,
-      completeTodo,
-      deleteTodo,
-      openModal,
-      setOpenModal,
-    }}>
-      {props.children}
+    <TodoContext.Provider
+      value={{
+        loading,
+        error,
+        totalTodos,
+        completedTodos,
+        inputValue,
+        setInputValue,
+        searchedTodos,
+        completeTodo,
+        deleteTodo,
+        openModal,
+        setOpenModal,
+      }}
+    >
+      {children}
     </TodoContext.Provider>
-  )
+  );
 }
 
 export { TodoContext, TodoProvider };

@@ -14,24 +14,26 @@ export function useLocalStorage(itemName, initialValue) {
         // Traemos todos los ToDos almacenados
         const localStorageItems = localStorage.getItem(itemName);
         // Iniicalizamos la variables de los ToDos
+        let parsedItems
 
         if (!localStorageItems) {
           // Si el usuario es nuevo y no existe un item en localStorage, por lo tanto guardamos con un array vacio
           localStorage.setItem(itemName, JSON.stringify(initialValue));
-          parsedItems = [];
+          parsedItems = initialValue;
         } else {
           // Si exite items en localStorage, transformamos el texto a objeto normal de ToDos
           parsedItems = JSON.parse(localStorageItems);
+          setItem(parsedItems);
         }
-
-        setItem(parsedItems);
+        
         setLoading(false);
       } catch (error) {
-        setError(error);
+        setLoading(false);
+        setError(true);
       }
     }, 1000);
-  });
-
+  }, []);
+  
   // Logica para guardar los ToDos en localStorage
   const saveItems = (newItems) => {
     try {
@@ -42,7 +44,7 @@ export function useLocalStorage(itemName, initialValue) {
       // Actualizamos el estado de los ToDos
       setItem(newItems);
     } catch (error) {
-      setError(error);
+      setError(false);
     }
   };
 
