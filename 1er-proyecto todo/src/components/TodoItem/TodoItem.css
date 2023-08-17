@@ -1,24 +1,132 @@
 .todo-item{
   display: flex;
   position: relative;
-  width: 20.5rem;
+  width: 100%;
+  height: 100%;
   background-color: #4380B1;
-  margin: 1rem 0rem;
-  border-radius: 1rem;
+  margin: 16px 0px;
+  border-radius: 16px;
+  padding-right: 8px;
 }
-/* .todo-item_checkbox{
-  margin: 0 .625rem ;
-} */
-.todo-item_checkbox {
+
+/* Hide the default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+
+.container {
+  display: block;
   position: relative;
-  width: 1.25rem;
-  height: 1.25rem;
-  border-radius: .125rem;
-  appearance: none; 
-  margin: auto .625rem;
+  cursor: pointer;
+  font-size: 24px;
+  user-select: none;
+  margin: 0 10px;
+  top: 10px;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  --clr: #0e7d5a;
+  position: relative;
+  top: 0.125em;
+  left: 0;
+  height: 1em;
+  width: 1em;
+  background-color: #ccc;
+  border-radius: 50%;
+  transition: 300ms;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checked .checkmark {
+  background-color: var(--clr);
+  animation: pulse 500ms ease-in-out;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark::after {
+  left: 0.33em;
+  top: 0.14em;
+  width: 0.2em;
+  height: 0.45em;
+  border: solid #E0E0E2;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 #0B6E4F90;
+    rotate: 20deg;
+  }
+
+  50% {
+    rotate: -20deg;
+  }
+
+  75% {
+    box-shadow: 0 0 0 10px #0B6E4F60;
+  }
+
+  100% {
+    box-shadow: 0 0 0 13px #0B6E4F30;
+    rotate: 0;
+  }
+}
+
+
+.todo-item_text{
+  color: #ffff;
+  font-size: 16px;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  box-sizing: content-box;
+}
+.todo-item_text--completed{
+  text-decoration: line-through;
+  color: #ffffff8a;
+}
+.todo-item_delete{
+  font-family: 'Comfortaa', cursive;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  right: 4px;
+  top: -4px;
+  color: #ffff;
+  font-weight: 700;
+}
+
+/* .todo-item_checkbox{
+  margin: 0 10px ;
+} */
+/* .todo-item_checkbox {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  appearance: none;
+  margin: auto 10px;
   background-color: #bbb;
   transition: all .3s;
-  border-radius: .625rem;
+  border-radius: 10px;
 }
 
 .todo-item_checkbox::before {
@@ -63,24 +171,4 @@
     opacity: 1;
     transform: scale(1) rotateY(360deg);
   }
-}
-.todo-item_text{
-  color: #ffff;
-  font-size: 1rem;
-  font-family: 'Comfortaa', cursive;
-  font-weight: 700;
-}
-.todo-item_text--completed{
-  text-decoration: line-through;
-  color: #ffffff8a;
-}
-.todo-item_delete{
-  font-family: 'Comfortaa', cursive;
-  cursor: pointer;
-  font-size: 1rem;
-  position: absolute;
-  right: .25rem;
-  top: -0.25rem;
-  color: #ffff;
-  font-weight: 700;
-}
+} */

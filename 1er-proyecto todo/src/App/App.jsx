@@ -1,5 +1,6 @@
 import { TodoProvider } from '../TodoContext/TodoProvider';
 import { AppUI } from './AppUI';
+import { SkeletonTheme } from 'react-loading-skeleton';
 
 const defaultTodos = [
   { text: 'Cortar cebolla', completed: false },
@@ -12,7 +13,9 @@ const defaultTodos = [
 export function App() {
   return (
     <TodoProvider>
-      <AppUI />
+      <SkeletonTheme baseColor="#4380B1" highlightColor="#83B0D4" >
+        <AppUI />
+      </SkeletonTheme>
     </TodoProvider>
   );
 }

@@ -1,5 +1,9 @@
 import React from 'react';
 
-function TodoError() {}
+function TodoError() {
+  return (
+    <p>Error...</p>
+  )
+}
 
 export { TodoError };

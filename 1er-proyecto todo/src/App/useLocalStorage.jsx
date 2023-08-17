@@ -31,8 +31,9 @@ export function useLocalStorage(itemName, initialValue) {
         setLoading(false);
         setError(true);
       }
-    }, 1000);
+    },1000);
   }, []);
+
   
   // Logica para guardar los ToDos en localStorage
   const saveItems = (newItems) => {
