@@ -6,7 +6,6 @@
   background-color: #4380B1;
   margin: 16px 0px;
   border-radius: 16px;
-  padding-right: 8px;
 }
 
 /* Hide the default checkbox */
@@ -98,6 +97,7 @@
   font-family: 'Comfortaa', cursive;
   font-weight: 700;
   box-sizing: content-box;
+  padding-right: 10px;
 }
 .todo-item_text--completed{
   text-decoration: line-through;

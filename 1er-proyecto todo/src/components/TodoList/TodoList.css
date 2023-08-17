@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 8px 0;
+  margin: 8px 0px;
+  min-width: 360px;
 }
 ul{
   margin: 0;
