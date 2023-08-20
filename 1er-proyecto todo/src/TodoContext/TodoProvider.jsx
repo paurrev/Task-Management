@@ -3,7 +3,7 @@ import { useLocalStorage } from '../App/useLocalStorage.jsx';
 
 const TodoContext = createContext();
 
-function TodoProvider({children}) {
+function TodoProvider({ children }) {
   const {
     items: todos,
     saveItems: saveTodos,
@@ -12,6 +12,7 @@ function TodoProvider({children}) {
   } = useLocalStorage('TODOS_V1', []);
   // Estado inicial de la búsqueda
   const [inputValue, setInputValue] = useState('');
+
   const [openModal, setOpenModal] = useState(false);
   // Cantidad de ToDos completados
   const completedTodos = todos.filter((todo) => todo.completed).length;
@@ -31,6 +32,15 @@ function TodoProvider({children}) {
       return todoText.includes(inputValueText);
     });
   }
+
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({
+      text,
+      completed: false
+    });
+    saveTodos(newTodos);
+  };
 
   //Logica para marcar como completado un ToDo
   const completeTodo = (text) => {
@@ -62,6 +72,7 @@ function TodoProvider({children}) {
         deleteTodo,
         openModal,
         setOpenModal,
+        addTodo,
       }}
     >
       {children}

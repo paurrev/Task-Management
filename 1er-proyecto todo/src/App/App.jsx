@@ -13,7 +13,7 @@ const defaultTodos = [
 export function App() {
   return (
     <TodoProvider>
-      <SkeletonTheme baseColor="#4380B1" highlightColor="#83B0D4" >
+      <SkeletonTheme baseColor="#4380B1" highlightColor="#83B0D4">
         <AppUI />
       </SkeletonTheme>
     </TodoProvider>

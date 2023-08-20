@@ -30,7 +30,7 @@ export function AppUI() {
         <TodoCounter />
         <TodoList>
           {error ? <TodoError /> : null}
-          {loading ? <TodoLoading lists={3}/>: null}
+          {loading ? <TodoLoading lists={3} /> : null}
           {console.log(searchedTodos.length)}
           {!loading && !searchedTodos.length ? <TodosEmpty /> : null}
           {searchedTodos.map((todo) => (
@@ -45,7 +45,7 @@ export function AppUI() {
         </TodoList>
         {openModal && (
           <Modal>
-            <TodoForm />
+            <TodoForm setOpenModal={setOpenModal} />
           </Modal>
         )}
         <CreateTodoButton setOpenModal={setOpenModal} />
