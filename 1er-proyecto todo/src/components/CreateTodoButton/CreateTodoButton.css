@@ -1,10 +1,9 @@
-.todo-button-add{
-  font-family: 'Comfortaa', cursive;
+.todo-button-add {
   cursor: pointer;
   align-self: center;
   width: 160px;
   height: 40px;
-  background-color: #CC075F;
+  background-color: #cc075f;
   color: #ffff;
   border: none;
   border-radius: 8px;

@@ -25,14 +25,14 @@ export function TodoForm() {
 
   return (
     <form className="todoForm-container" onSubmit={onSubmit}>
-      <label className="todoForm-title2">Escribe una nueva Tarea</label>
+      <label className="todoForm-title2"></label>
       <textarea
         required
+        placeholder='Escribe una tarea'
         className="todoForm-text"
         value={newTodoValue}
         onChange={onChange}
       />
-      <label className="todoForm-title">Escribe una nueva Tarea</label>
       <div className="todoForm-buttons">
         <button
           type="button"

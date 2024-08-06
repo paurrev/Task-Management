@@ -1,33 +1,32 @@
-.todo-header{
+.todo-header {
   display: flex;
   position: relative;
   align-items: center;
   margin: 0 auto;
 }
-.todo-header_search{
+.todo-header_search {
   align-items: center;
   width: 250px;
-  font-family: 'Comfortaa', cursive;
+
   font-size: 18px;
   padding: 12px 8px 8px 40px;
   background-color: transparent;
-  border: 1px #4380B1 solid;
+  border: 1px #4380b1 solid;
   border-radius: 20px;
-  caret-color: #0580E2;
+  caret-color: #0580e2;
   color: #ededed;
   font-weight: 800;
 }
-.todo-header_search::placeholder{
-  color: #A2A9B0;
+.todo-header_search::placeholder {
+  color: #a2a9b0;
 }
-.todo-header_search:focus{
+.todo-header_search:focus {
   outline: none;
 }
-.todo-header_search:focus{
+.todo-header_search:focus {
   box-shadow: 0px 0px 8px 0px rgba(45, 116, 176, 1);
-  
 }
-.todo-header_icon{
+.todo-header_icon {
   margin-top: 2px;
   width: 24px;
   height: 24px;
@@ -35,6 +34,5 @@
   top: 50%;
   padding-left: 12px;
   transform: translateY(-50%);
-  color: #4380B1
-;
+  color: #4380b1;
 }

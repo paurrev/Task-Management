@@ -1,9 +1,9 @@
-.todo-item{
+.todo-item {
   display: flex;
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: #4380B1;
+  background-color: #4380b1;
   margin: 16px 0px;
   border-radius: 16px;
 }
@@ -16,7 +16,6 @@
   height: 0;
   width: 0;
 }
-
 
 .container {
   display: block;
@@ -49,7 +48,7 @@
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-  content: "";
+  content: '';
   position: absolute;
   display: none;
 }
@@ -65,14 +64,14 @@
   top: 0.14em;
   width: 0.2em;
   height: 0.45em;
-  border: solid #E0E0E2;
+  border: solid #e0e0e2;
   border-width: 0 0.15em 0.15em 0;
   transform: rotate(45deg);
 }
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 #0B6E4F90;
+    box-shadow: 0 0 0 #0b6e4f90;
     rotate: 20deg;
   }
 
@@ -81,30 +80,28 @@
   }
 
   75% {
-    box-shadow: 0 0 0 10px #0B6E4F60;
+    box-shadow: 0 0 0 10px #0b6e4f60;
   }
 
   100% {
-    box-shadow: 0 0 0 13px #0B6E4F30;
+    box-shadow: 0 0 0 13px #0b6e4f30;
     rotate: 0;
   }
 }
 
-
-.todo-item_text{
+.todo-item_text {
   color: #ffff;
   font-size: 16px;
-  font-family: 'Comfortaa', cursive;
+
   font-weight: 700;
   box-sizing: content-box;
   padding-right: 10px;
 }
-.todo-item_text--completed{
+.todo-item_text--completed {
   text-decoration: line-through;
   color: #ffffff8a;
 }
-.todo-item_delete{
-  font-family: 'Comfortaa', cursive;
+.todo-item_delete {
   cursor: pointer;
   font-size: 16px;
   position: absolute;
