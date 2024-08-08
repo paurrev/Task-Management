@@ -1,0 +1,9 @@
+:root {
+  --white:#FFFF;
+  --gradiant-orange: linear-gradient(56deg, #F4762D 0%, #FFCF67 100%);
+  --gradiant-green: linear-gradient(236deg, rgba(74,158,72,1) 18%, rgba(0,194,103,1) 100%);
+  --gradiant-blue: linear-gradient(56deg, #0F68A9 0%, #2FEAA8 100%);
+  --gradiant-white: linear-gradient(56deg, #FFFFFF 38%, #8A8D8E 100%);
+  --gradiant--turquoise: linear-gradient(87deg, #2a9d8f 1.15%, #00cd81 98.85%);
+  --black-light: #212529;
+}
