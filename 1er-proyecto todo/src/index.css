@@ -1,7 +1,11 @@
+*{
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background: #0E1A59;
+  background: #03081B;
   font-family: 'Heebo Variable', sans-serif;
   display: grid;
   place-content: center;
@@ -14,11 +18,16 @@ html{
 p{
   color: white;
 }
-.Todo {
+.todo-main {
   min-width: 360px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
 }
 #root{
   min-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100dvw;
 }
