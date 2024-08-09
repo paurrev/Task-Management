@@ -1,0 +1,14 @@
+.info-panel{
+  margin-bottom: 64px;
+}
+
+.info-panel--title{
+  color: white;
+  font-size: 42px;
+  margin: 24px 0 16px 0;
+}
+
+.info-panel--cards{
+  display: flex;
+  flex-direction: row;
+}

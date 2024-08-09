@@ -1,0 +1,53 @@
+@import '../../variables.css';
+
+.info-panel--icon {
+  margin-bottom: 10px;
+}
+
+.todo-card--white {
+  background: var(--gradiant-white);
+}
+.todo-card--blue {
+  background: var(--gradiant-blue);
+}
+.todo-card--orange {
+  background: var(--gradiant-orange);
+}
+.todo-card--green {
+  background: var(--gradiant-green);
+}
+
+.todo-card__container {
+  width: 10.375rem;
+  padding: 12px;
+  border-radius: 20px;
+}
+
+.todo-card__container:not(:last-child) {
+  margin-right: 30px;
+}
+
+.todo-card__text{
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-card__number,
+.todo-card__description {
+  color: var(--white);
+}
+
+.todo-card__number {
+  margin: 0;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.todo-card__description {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
