@@ -1,0 +1,9 @@
+.navbarTodo {
+  display: flex;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #e4e95d 0%, #e89d1f 100%);
+  width: 80px;
+  height: 98dvh;
+  flex-shrink: 0;
+  margin: 4px 24px 4px 8px;
+}
