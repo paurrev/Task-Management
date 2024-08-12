@@ -3,16 +3,18 @@ import { TodoContext } from '../../TodoContext/TodoProvider';
 import { AddIcon } from '../TodoIcons/AddIcon';
 import { CancelIcon } from '../TodoIcons/CancelIcon';
 import './TodoForms.css';
+import '../../variables.css';
+import { IconClose } from '../../assets/Icons';
 
 export function TodoForm() {
   const { addTodo, setOpenModal } = useContext(TodoContext);
-  const [ newTodoValue, setNewTodoValue ] = useState('');
+  const [newTodoValue, setNewTodoValue] = useState('');
 
   const onSubmit = (event) => {
     event.preventDefault();
     addTodo(newTodoValue);
-    console.log(newTodoValue)
-    setOpenModal(false)
+    console.log(newTodoValue);
+    setOpenModal(false);
   };
 
   const onClickCancel = () => {
@@ -25,30 +27,31 @@ export function TodoForm() {
 
   return (
     <form className="todoForm-container" onSubmit={onSubmit}>
-      <label className="todoForm-title2"></label>
-      <textarea
+      <div className="TodoForm-navbar">
+        <IconClose
+          size={24}
+          color="var(--default-50)"
+          stroke={3}
+          onClick={onClickCancel}
+          className="TodoForm-close"
+        />
+        <div className='TodoForm-title'>
+          <span>Add new task</span>
+        </div>
+      </div>
+      <label className="TodoForm-title2"></label>
+      <input
         required
-        placeholder='Escribe una tarea'
-        className="todoForm-text"
+        type="text"
+        placeholder="Write a new task"
+        className="TodoForm-text"
         value={newTodoValue}
         onChange={onChange}
       />
-      <div className="todoForm-buttons">
-        <button
-          type="button"
-          className="todoForm-cancel"
-          onClick={onClickCancel}
-        >
-          <div className="cancel-container">
-            <CancelIcon className="todoForm-cancel_icon todoForm-button" />
-          </div>
-          <span className="todoForm-text_cancel todoForm-txt">Cancel</span>
-        </button>
-        <button className="todoForm-add" type="submit">
-          <span className="todoForm-text_add todoForm-txt">Add</span>
-          <div className="add-container">
-            <AddIcon className="todoForm-add_icon todoForm-button" />
-          </div>
+      <hr className="divider-textarea" />
+      <div className="TodoForm-button">
+        <button className="TodoForm-create-task" type="submit">
+          Create new task
         </button>
       </div>
     </form>

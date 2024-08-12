@@ -1,12 +1,17 @@
+@import '../../variables.css';
+
 .todo-button-add {
+  color: var(--layout-foreground);
   cursor: pointer;
-  align-self: center;
-  width: 160px;
-  height: 40px;
-  background-color: #cc075f;
-  color: #ffff;
-  border: none;
-  border-radius: 8px;
-  font-size: 18px;
+  display: flex;
+  padding: 10px 16px;
+  align-items: center;
+  gap: 3px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-style: normal;
   font-weight: 700;
+  line-height: normal;
+  background: var(--gradiant--turquoise);
+  border: transparent;
 }

@@ -1,166 +1,79 @@
+@import '../../variables.css';
+
 .todoForm-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   width: 500px;
-  height: 170px;
-  background-color: #4380b1;
+  padding: 16px;
+  background-color: var(--layout-foreground);
   border-radius: 30px;
-  /* padding: 0 10px; */
+  box-shadow: 4px 4px 40px 0px var(--default-800);
 }
 
-/* .todoForm-title{
-  position: absolute;
-  transition: 0.5s;
-  top: 298px;
-  left: 300px;
-  color: #FFF;
-  opacity: 50%;
-} */
-
-.todoForm-title {
-  font-family: Comfortaa;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  pointer-events: none;
-}
-
-/* .todoForm-text:focus + .todoForm-title ,
-.todoForm-text:valid + .todoForm-title {
-  transform: translateX(0px) translateY(-34px);
-  opacity: 100%;
-} */
-
-.todoForm-text {
-  display: inline-block;
-  width: auto;
-  min-width: 480px;
-  max-width: 1000px;
-  height: 40px;
-  background-color: transparent;
-  resize: none;
-  border-radius: 8px;
-  border: 2px solid var(--white, #fff);
-  outline: none;
-  color: white;
-
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.9;
-  padding: 0 10px;
-  box-sizing: border-box;
-  overflow: hidden;
-  transition: 0.5s;
-  white-space: nowrap;
-  margin-bottom: 16px;
-  &::placeholder {
-    color: white;
-  }
-}
-
-/* .todoForm-text:focus,
-.todoForm-text:valid{
-  margin: 16px 0;
-  border: 3px solid #05C7F2;
-  transition: .5s;
-} */
-
-/* .todoForm-text:not(:focus-within):invalid{
-  margin: 0 0 24px 0;
-} */
-
-.todoForm-buttons {
+.TodoForm-navbar {
   display: flex;
-  /* flex-direction: row; */
-  justify-content: space-evenly;
-  width: inherit;
-  transition: all 0.2s;
+  align-items: center;
+  align-self: stretch;
+  margin-bottom: 16px;
+  position: relative;
 }
 
-.todoForm-buttons > button {
-  font-size: 20px;
-  width: 90px;
-  height: 34px;
-  border-radius: 8px;
-  border: none;
-  color: white;
-  font-weight: 700;
+.TodoForm-close {
   cursor: pointer;
-  overflow: hidden;
+  position: absolute;
+  left: 0;
 }
 
-button > span {
+.TodoForm-title {
+  flex-grow: 1;
   text-align: center;
 }
 
-.todoForm-cancel {
+.TodoForm-text {
+  border: transparent;
+  outline: none;
+  background: transparent;
+  height: auto;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 0 8px;
+  resize: none;
+  &::placeholder {
+    font-family: 'Heebo Variable', sans-serif;
+    font-weight: 700;
+  }
+}
+
+.divider-textarea {
+  stroke-width: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(217, 217, 217, 1) 0%,
+    rgba(115, 115, 115, 1) 50%,
+    rgba(217, 217, 217, 1) 100%
+  );
+  width: 100%;
+  height: 1px;
+  border: none;
+}
+
+.TodoForm-button{
   display: flex;
-  position: relative;
-  background-color: #cc075f;
-  justify-content: center;
-  align-items: center;
+  justify-content: end;
 }
 
-.todoForm-add {
+.TodoForm-create-task {
   display: flex;
-  position: relative;
-  background-color: #0e7d5a;
-  justify-content: center;
+  padding: 8px 12px;
+  justify-content: flex-end;
   align-items: center;
-}
-
-.todoForm-cancel .todoForm-cancel_icon {
-  top: 6px;
-  right: 87px;
-}
-
-.todoForm-add .todoForm-add_icon {
-  top: 7px;
-  left: 90px;
-}
-
-.todoForm-buttons .todoForm-button {
-  position: absolute;
-  transform-origin: center center;
-  transition: transform 0.3s ease-in-out;
-}
-
-/* .todoForm-cancel:hover .todoForm-cancel_icon{
-  display: block;
-  transform: translateX(55px) rotate(90deg) scale(1.1);
-} */
-
-.todoForm-buttons .todoForm-txt {
-  position: absolute;
-  top: 8px;
-  transition: all 0.3s ease-in-out;
-}
-
-.todoForm-add:hover .todoForm-add_icon {
-  display: block;
-  transform: translateX(-55px) rotate(90deg) scale(1.1);
-}
-
-.todoForm-cancel:hover .todoForm-text_cancel {
-  transform: translateX(5em);
-}
-
-.todoForm-add:hover .todoForm-text_add {
-  transform: translateX(-5em);
-}
-
-button:active {
-  transform: scale(0.9);
-}
-
-.todoForm-cancel:active {
-  box-shadow: 0px 1px 15px 2px #a5074eae;
-}
-
-.todoForm-add:active {
-  box-shadow: 0px 1px 15px 2px #0b5b46b8;
+  background: var(--primary-400);
+  border-radius: 8px;
+  border: none;
+  color: var(--layout-foreground);
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 16px;
 }

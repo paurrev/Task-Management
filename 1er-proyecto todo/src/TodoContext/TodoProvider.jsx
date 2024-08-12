@@ -12,7 +12,9 @@ function TodoProvider({ children }) {
   } = useLocalStorage('TODOS_V1', []);
   // Estado inicial de la búsqueda
   const [inputValue, setInputValue] = useState('');
-
+  // Estado inicial de la position del modal
+  const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
+  // explain the code with a comment under
   const [openModal, setOpenModal] = useState(false);
   // Cantidad de ToDos completados
   const completedTodos = todos.filter((todo) => todo.completed).length;
@@ -37,7 +39,7 @@ function TodoProvider({ children }) {
     const newTodos = [...todos];
     newTodos.push({
       text,
-      completed: false
+      completed: false,
     });
     saveTodos(newTodos);
   };
@@ -73,6 +75,8 @@ function TodoProvider({ children }) {
         openModal,
         setOpenModal,
         addTodo,
+        clickPosition,
+        setClickPosition,
       }}
     >
       {children}
