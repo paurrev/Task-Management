@@ -11,7 +11,6 @@ function TodoLoading({lists}) {
         <div className="loadingTodo-container">
           <Skeleton
             borderRadius={16}
-            width={333.797}
             height={50}
           />
         </div>

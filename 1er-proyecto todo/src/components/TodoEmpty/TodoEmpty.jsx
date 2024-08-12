@@ -1,7 +1,13 @@
 import React from 'react';
+import './TodoEmpty.css';
 
 function TodosEmpty() {
-  return <p>Crea tu primer TODO ✏️</p>;
+  return (
+    <div className='TodoEmpty'>
+      <p className="TodoEmpty--text">Crea tu primer TODO ✏️</p>
+    </div>
+  )
+    
 }
 
 export { TodosEmpty };

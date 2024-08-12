@@ -1,23 +1,25 @@
 import { useContext } from 'react';
 import './TodoSearch.css';
 import { TodoContext } from '../../TodoContext/TodoProvider';
+import { IconSearch } from '../../assets/Icons';
 
-export function TodoSearch() {
+function TodoSearch() {
   const { inputValue, setInputValue } = useContext(TodoContext);
 
   return (
-    <div className="todo-header">
+    <div className="todo-search">
+      <IconSearch size={24} color="var(--black-light)" stroke={3}/>
       <input
-        className="todo-header_search"
-        placeholder="Create a new task..."
+        className="todo-search__input"
+        placeholder="Search Tasks"
         value={inputValue}
         onChange={(event) => {
-          console.log(event.target.value);
           setInputValue(event.target.value);
         }}
         autoFocus
       />
-      <span className="material-symbols-outlined todo-header_icon">search</span>
     </div>
   );
 }
+
+export { TodoSearch };

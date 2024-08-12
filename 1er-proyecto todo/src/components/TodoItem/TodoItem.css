@@ -1,11 +1,17 @@
 .todo-item {
   display: flex;
-  position: relative;
+  align-items: center;
   width: 100%;
+  justify-content: space-between;
   height: 100%;
-  background-color: #4380b1;
+  padding: 12px 18px;
   margin: 16px 0px;
   border-radius: 16px;
+  border: 2px solid var(--primary-900)
+}
+
+.Todo-item--todo-task{
+  display: flex;
 }
 
 /* Hide the default checkbox */
@@ -19,20 +25,15 @@
 
 .container {
   display: block;
-  position: relative;
   cursor: pointer;
   font-size: 24px;
   user-select: none;
   margin: 0 10px;
-  top: 10px;
 }
 
 /* Create a custom checkbox */
 .checkmark {
   --clr: #0e7d5a;
-  position: relative;
-  top: 0.125em;
-  left: 0;
   height: 1em;
   width: 1em;
   background-color: #ccc;
@@ -92,7 +93,7 @@
 .todo-item_text {
   color: #ffff;
   font-size: 16px;
-
+  margin: 0;
   font-weight: 700;
   box-sizing: content-box;
   padding-right: 10px;
@@ -103,69 +104,38 @@
 }
 .todo-item_delete {
   cursor: pointer;
-  font-size: 16px;
-  position: absolute;
-  right: 4px;
-  top: -4px;
-  color: #ffff;
-  font-weight: 700;
+  border: transparent;
+  background: transparent;
 }
 
-/* .todo-item_checkbox{
-  margin: 0 10px ;
-} */
-/* .todo-item_checkbox {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  border-radius: 2px;
-  appearance: none;
-  margin: auto 10px;
-  background-color: #bbb;
-  transition: all .3s;
-  border-radius: 10px;
+/* Bin Styles */
+.bin-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background-color: rgb(255, 95, 95);
+  cursor: pointer;
+  border: 2px solid rgb(255, 201, 201);
+  transition-duration: 0.3s;
 }
-
-.todo-item_checkbox::before {
-  content: '';
-  position: absolute;
-  border: solid #fff;
-  display: block;
-  width: .3em;
-  height: .7em;
-  border-width: 0 .2em .2em 0;
-  z-index: 1;
-  opacity: 0;
-  right: calc(50% - .25em);
-  top: calc(50% - .55em);
-  transform: rotate(0deg);
-  transition: all .3s;
-  transform-origin: center center;
+.bin-bottom {
+  width: auto;
 }
-
-.todo-item_checkbox:checked {
-  animation: b .3s ease-in forwards;
-  background-color: #CC075F;
+.bin-top {
+  width: 18px;
+  transform-origin: right;
+  transition-duration: 0.3s;
 }
-
-.todo-item_checkbox:checked::before {
-  opacity: 1;
-  transform: rotate(405deg);
+.bin-button:hover .bin-top {
+  transform: rotate(45deg);
 }
-
-@keyframes b {
-  0% {
-    opacity: 1;
-    transform: scale(1) rotateY(0deg);
-  }
-
-  50% {
-    opacity: 0;
-    transform: scale(.8) rotateY(180deg);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1) rotateY(360deg);
-  }
-} */
+.bin-button:hover {
+  background-color: rgb(255, 0, 0);
+}
+.bin-button:active {
+  transform: scale(0.9);
+}

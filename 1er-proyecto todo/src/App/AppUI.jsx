@@ -1,55 +1,34 @@
 import { useContext } from 'react';
 
-import { TodoCounter } from '../components/TodoCounter/TodoCounter.jsx';
-import { TodoSearch } from '../components/TodoSearch/TodoSearch.jsx';
-import { TodoItem } from '../components/TodoItem/TodoItem.jsx';
-import { TodoList } from '../components/TodoList/TodoList.jsx';
-import { CreateTodoButton } from '../components/CreateTodoButton/CreateTodoButton.jsx';
+
 import { TodoContext } from '../TodoContext/TodoProvider.jsx';
 import { Modal } from '../Modal/modal.jsx';
 import { TodoForm } from '../components/TodoForms/TodoForms.jsx';
-import { TodoError } from '../components/TodoError/TodoError.jsx';
-import { TodoLoading } from '../components/TodoLoading/Todoloading.jsx';
-import { TodosEmpty } from '../components/TodoEmpty/TodoEmpty.jsx';
+
+import { Infopanel } from '../components/Infopanel/Infopanel.jsx';
+import { Navbar } from '../components/Sidebar/Navbar.jsx';
+import { MainContent } from '../components/MainContent/MainContent.jsx';
 
 export function AppUI() {
   const {
-    error,
-    loading,
-    searchedTodos,
-    completeTodo,
-    deleteTodo,
     openModal,
     setOpenModal,
   } = useContext(TodoContext);
 
   return (
     <>
-      <section className="Todo">
-        <TodoSearch />
-        <TodoCounter />
-        <TodoList>
-          {error ? <TodoError /> : null}
-          {loading ? <TodoLoading lists={3} /> : null}
-          {console.log(searchedTodos.length)}
-          {!loading && !searchedTodos.length ? <TodosEmpty /> : null}
-          {searchedTodos.map((todo) => (
-            <TodoItem
-              key={todo.text}
-              text={todo.text}
-              completed={todo.completed}
-              onCompleted={() => completeTodo(todo.text)}
-              onDeleted={() => deleteTodo(todo.text)}
-            />
-          ))}
-        </TodoList>
+      <Navbar />
+      <main className="todo-main">
+        <Infopanel/>
+        <MainContent/>
+      </main>
+      <div>
         {openModal && (
           <Modal>
             <TodoForm setOpenModal={setOpenModal} />
           </Modal>
         )}
-        <CreateTodoButton setOpenModal={setOpenModal} />
-      </section>
+      </div>
     </>
   );
 }

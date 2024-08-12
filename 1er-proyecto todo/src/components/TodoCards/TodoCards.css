@@ -4,7 +4,7 @@
   margin-bottom: 10px;
 }
 
-.todo-card--white {
+.todo-card--layout-foreground {
   background: var(--gradiant-white);
 }
 .todo-card--blue {
@@ -27,14 +27,14 @@
   margin-right: 30px;
 }
 
-.todo-card__text{
+.todo-card__text {
   display: flex;
   flex-direction: column;
 }
 
 .todo-card__number,
 .todo-card__description {
-  color: var(--white);
+  color: var(--layout-foreground);
 }
 
 .todo-card__number {

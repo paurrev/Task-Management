@@ -1,0 +1,22 @@
+@import '../../variables.css';
+
+.main-nav--container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.main-nav--content {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-nav--title {
+  color: var(--layout-foreground);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0 30px 0 0;
+}
