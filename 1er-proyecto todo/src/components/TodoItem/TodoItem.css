@@ -1,16 +1,18 @@
+@import '../../variables.css';
+
 .todo-item {
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-between;
   height: 100%;
-  padding: 12px 18px;
+  padding:12px 18px;
   margin: 16px 0px;
-  border-radius: 16px;
-  border: 2px solid var(--primary-900)
+  border-radius: 20px;
+  border: 2px solid var(--primary-900);
 }
 
-.Todo-item--todo-task{
+.Todo-item--todo-task {
   display: flex;
 }
 
@@ -108,6 +110,90 @@
   background: transparent;
 }
 
+.todo-item--badges {
+  display: flex;
+  gap: 20px;
+}
+
+.status-badges span {
+  color: var(--layout-foreground);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.status-badges {
+  display: flex;
+  padding: 4px 8px;
+  align-items: center;
+  gap: 4px;
+  border-radius: 16px;
+}
+
+.todo {
+  background: var(--default-400);
+}
+
+.in-progress {
+  background: #fe8c06;
+}
+
+.completed {
+  background: var(--sucess-300);
+}
+
+.priority-badges {
+  display: flex;
+  padding: 2px 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+}
+
+.priority-badges span {
+  color: var(--layout-foreground);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.low {
+  background: var(--gradiant-lowBlue);
+}
+
+.medium {
+  background: var(--gradiant-mediumOrange);
+}
+
+.high {
+  background: var(--gradiant-highRed);
+}
+
+.low {
+  background: var(
+    --Color-Gradiant-LowBlue,
+    linear-gradient(87deg, #0d41e1 0.94%, #07c8f9 99.06%)
+  );
+}
+
+.date-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.date-badges span {
+  color: var(--layout-foreground);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
 /* Bin Styles */
 .bin-button {
   display: flex;
@@ -123,7 +209,7 @@
   transition-duration: 0.3s;
 }
 .bin-bottom {
-  width: auto;
+  width: 15px;
 }
 .bin-top {
   width: 18px;
