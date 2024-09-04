@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import './TodoSearch.css';
-import { TodoContext } from '../../TodoContext/TodoProvider';
+import { TodoContext } from '../../TodoProvider/TodoProvider';
 import { IconSearch } from '../../assets/Icons';
 
 function TodoSearch() {
@@ -8,7 +8,7 @@ function TodoSearch() {
 
   return (
     <div className="todo-search">
-      <IconSearch size={24} color="var(--black-light)" stroke={3}/>
+      <IconSearch size={24} color="var(--layout-foreground)" stroke={3} />
       <input
         className="todo-search__input"
         placeholder="Search Tasks"

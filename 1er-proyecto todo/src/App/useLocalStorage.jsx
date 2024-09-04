@@ -45,7 +45,7 @@ export function useLocalStorage(itemName, initialValue) {
       // Actualizamos el estado de los ToDos
       setItem(newItems);
     } catch (error) {
-      setError(false);
+      setError(true);
     }
   };
 

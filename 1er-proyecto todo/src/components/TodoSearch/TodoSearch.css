@@ -1,3 +1,5 @@
+@import "../../variables.css";
+
 .todo-search {
   display: flex;
   height: 40px;
@@ -7,7 +9,7 @@
   gap: 5px;
   flex-shrink: 0;
   border-radius: 24px;
-  background: #f4f3ee;
+  background: var(--default-300);
 }
 .todo-search__input{
   width: 95%;
@@ -16,10 +18,11 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  background: transparent;
 }
 
 .todo-search__input::placeholder {
-  color: #828282;
+  color: var(--default-700);
   font-family: 'Heebo Variable', sans-serif;
   font-size: 16px;
   font-style: normal;

@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import './modal.css';
-import { TodoContext } from '../TodoContext/TodoProvider';
+import { TodoContext } from '../TodoProvider/TodoProvider';
 import { useContext, useRef } from 'react';
 import Draggable from 'react-draggable';
 

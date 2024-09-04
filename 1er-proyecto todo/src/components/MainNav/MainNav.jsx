@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { CreateTodoButton } from '../CreateTodoButton/CreateTodoButton';
 import { TodoSearch } from '../TodoSearch/TodoSearch';
-import { TodoContext } from '../../TodoContext/TodoProvider';
+import { TodoContext } from '../../TodoProvider/TodoProvider';
 import './MainNav.css';
 
 function MainNav() {
