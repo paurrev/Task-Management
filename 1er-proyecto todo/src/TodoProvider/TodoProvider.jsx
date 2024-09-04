@@ -23,6 +23,7 @@ function TodoProvider({ children }) {
 
   // Crearemos una nueva variable donde se guardaran las concidencias de busqueda
   let searchedTodos = [];
+  
 
   // Logica para filtrar
   if (!inputValue.length >= 1) {
@@ -35,13 +36,17 @@ function TodoProvider({ children }) {
     });
   }
 
-  const addTodo = (text) => {
+  const addTodo = (text, status, priority, dueDate) => {
     const newTodos = [...todos];
     newTodos.push({
       text,
       completed: false,
+      status,
+      priority,
+      dueDate,
     });
     saveTodos(newTodos);
+    console.log(newTodos);
   };
 
   //Logica para marcar como completado un ToDo
