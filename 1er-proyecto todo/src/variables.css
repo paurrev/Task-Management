@@ -50,4 +50,7 @@
   --gradiant-blue: linear-gradient(56deg, #0f68a9 0%, #2feaa8 100%);
   --gradiant-white: linear-gradient(56deg, #ffffff 38%, #8a8d8e 100%);
   --gradiant--turquoise: linear-gradient(87deg, #2a9d8f 1.15%, #00cd81 98.85%);
+  --gradiant-lowBlue: linear-gradient(90deg, rgba(13,65,225,1) 0%, rgba(7,200,249,1) 100%);
+  --gradiant-mediumOrange: linear-gradient(90deg, rgba(255,155,5,1) 0%, rgba(251,196,0,1) 100%);
+  --gradiant-highRed: linear-gradient(90deg, rgba(255,88,68,1) 0%, rgba(222,24,0,1) 100%);
 }
