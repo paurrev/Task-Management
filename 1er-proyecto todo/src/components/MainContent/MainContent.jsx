@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { TodoContext } from "../../TodoContext/TodoProvider";
+import { TodoContext } from "../../TodoProvider/TodoProvider";
 import { MainNav } from "../MainNav/MainNav";
 import { TodoError } from '../TodoError/TodoError.jsx';
 import { TodoLoading } from '../TodoLoading/Todoloading.jsx';
@@ -19,16 +19,19 @@ function MainContent() {
 
   return (
     <section className="main-content">
-      <MainNav/>
+      <MainNav />
       <TodoList>
         {error ? <TodoError /> : null}
         {loading ? <TodoLoading lists={4} /> : null}
         {!loading && !searchedTodos.length ? <TodosEmpty /> : null}
-        {searchedTodos.map((todo) => (
+        {searchedTodos.map((todo, index) => (
           <TodoItem
-            key={todo.text}
-            text={todo.text}
+            key={index}
+            textTodo={todo.text}
             completed={todo.completed}
+            status={todo.status}
+            priority={todo.priority}
+            dueDate={todo.dueDate}
             onCompleted={() => completeTodo(todo.text)}
             onDeleted={() => deleteTodo(todo.text)}
           />

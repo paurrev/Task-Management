@@ -4,7 +4,7 @@
   color: var(--layout-foreground);
   cursor: pointer;
   display: flex;
-  padding: 10px 16px;
+  padding: 0 16px;
   align-items: center;
   gap: 3px;
   border-radius: 24px;
@@ -14,4 +14,49 @@
   line-height: normal;
   background: var(--gradiant--turquoise);
   border: transparent;
+  height: 44px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.todo-button-add:hover::before {
+  animation: shine 1.5s ease-out infinite;
+  opacity: 1;
+}
+
+.todo-button-add::before {
+  content: "";
+  opacity: 0;  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 70%);
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+.todo-button-add:active {
+  background: linear-gradient(87deg, #268D80 1.15%, #00AD6D 98.85%);
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  100% {
+    left: 100%;
+  }
 }

@@ -126,7 +126,7 @@ const IconClose = ({ size, color, stroke, onClick, className = '' }) => {
 
 const IconBin = () => {
   return (
-    <button className="bin-button">
+    <div className="bin-button">
       <svg
         className="bin-top"
         viewBox="0 0 39 7"
@@ -160,9 +160,139 @@ const IconBin = () => {
         <path d="M12 6L12 29" stroke="white" strokeWidth="4"></path>
         <path d="M21 6V29" stroke="white" strokeWidth="4"></path>
       </svg>
-    </button>
+    </div>
   );
 };
+
+const IconTotal = ({ size, color, className = '' }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill={color}
+      className={className}
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M20.894 17.553a1 1 0 0 1 -.447 1.341l-8 4a1 1 0 0 1 -.894 0l-8 -4a1 1 0 0 1 .894 -1.788l7.553 3.774l7.554 -3.775a1 1 0 0 1 1.341 .447m0 -4a1 1 0 0 1 -.447 1.341l-8 4a1 1 0 0 1 -.894 0l-8 -4a1 1 0 0 1 .894 -1.788l7.552 3.775l7.554 -3.775a1 1 0 0 1 1.341 .447m0 -4a1 1 0 0 1 -.447 1.341l-8 4a1 1 0 0 1 -.894 0l-8 -4a1 1 0 0 1 .894 -1.788l7.552 3.775l7.554 -3.775a1 1 0 0 1 1.341 .447m-8.887 -8.552q .056 0 .111 .007l.111 .02l.086 .024l.012 .006l.012 .002l.029 .014l.05 .019l.016 .009l.012 .005l8 4a1 1 0 0 1 0 1.788l-8 4a1 1 0 0 1 -.894 0l-8 -4a1 1 0 0 1 0 -1.788l8 -4l.011 -.005l.018 -.01l.078 -.032l.011 -.002l.013 -.006l.086 -.024l.11 -.02l.056 -.005z" />
+    </svg>
+  );
+};
+
+const IconTodo = ({ size, color, className = '' }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 2l-8 4l8 4l8 -4l-8 -4" />
+      <path d="M4 10l8 4l8 -4" />
+      <path d="M4 18l8 4l8 -4" />
+      <path d="M4 14l8 4l8 -4" />
+    </svg>
+  );
+};
+
+function IconLowPriority({ size, color, stroke, className = '' }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth={stroke}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M17 10h4v4" />
+      <path d="M3 12c.887 -1.284 2.48 -2.033 4 -2c1.52 -.033 3.113 .716 4 2s2.48 2.033 4 2c1.52 .033 3 -1 4 -2l2 -2" />
+    </svg>
+  );
+}
+
+function IconMediumPriority({ size, color, stroke, className = '' }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth={stroke}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 5l0 14" />
+      <path d="M16 9l-4 -4" />
+      <path d="M8 9l4 -4" />
+    </svg>
+  );
+}
+
+function IconHighPriority({ size, color, stroke, className = '' }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+    stroke={color}
+      strokeWidth={stroke}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M17 3l0 18" />
+      <path d="M4 6l3 -3l3 3" />
+      <path d="M20 6l-3 -3l-3 3" />
+      <path d="M7 3l0 18" />
+    </svg>
+  )
+}
+
+const IconCalendar = ({ size, color, className = '' }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+      <path d="M16 3l0 4" />
+      <path d="M8 3l0 4" />
+      <path d="M4 11l16 0" />
+      <path d="M8 15h2v2h-2z" />
+    </svg>
+  );
+}
+
 
 export {
   IconCircleCheck,
@@ -172,4 +302,10 @@ export {
   IconSearch,
   IconClose,
   IconBin,
+  IconTotal,
+  IconTodo,
+  IconLowPriority,
+  IconMediumPriority,
+  IconHighPriority,
+  IconCalendar,
 };

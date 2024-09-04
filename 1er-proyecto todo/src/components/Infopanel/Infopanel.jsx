@@ -1,29 +1,37 @@
 import {
   IconCircleCheck,
   IconProgress,
+  IconTotal,
   IconUpcoming,
 } from '../../assets/Icons';
 import { TodoCards } from '../TodoCards/TodoCards';
 import '../../variables.css';
 import './Infopanel.css';
 import { useContext } from 'react';
-import { TodoContext } from '../../TodoContext/TodoProvider';
+import { TodoContext } from '../../TodoProvider/TodoProvider';
 
 function Infopanel() {
-  const { completedTodos } = useContext(TodoContext);
+  const { completedTodos, totalTodos } = useContext(TodoContext);
   return (
-
     <section className="info-panel">
       <h1 className="info-panel--title">Task Management</h1>
       <div className="info-panel--cards">
         <TodoCards
-          number=""
-          description=""
+          icon={
+            <IconTotal
+              size={24}
+              color="var(--default-400)"
+              className="info-panel--icon"
+            />
+          }
+          number={totalTodos}
+          description="Total"
           backgroundName="todo-card--layout-foreground"
+          colorText="color-dark"
         />
         <TodoCards
           icon={
-            <IconCircleCheck
+            <IconUpcoming
               size={24}
               color="var(--layout-foreground)"
               className="info-panel--icon"
@@ -48,7 +56,7 @@ function Infopanel() {
         />
         <TodoCards
           icon={
-            <IconUpcoming
+            <IconCircleCheck
               size={24}
               color="var(--layout-foreground)"
               className="info-panel--icon"

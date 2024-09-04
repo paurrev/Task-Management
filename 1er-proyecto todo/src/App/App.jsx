@@ -1,4 +1,4 @@
-import { TodoProvider } from '../TodoContext/TodoProvider';
+import { TodoProvider } from '../TodoProvider/TodoProvider';
 import { AppUI } from './AppUI';
 import { SkeletonTheme } from 'react-loading-skeleton';
 

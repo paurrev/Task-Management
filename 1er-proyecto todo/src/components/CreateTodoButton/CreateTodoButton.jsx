@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { IconAdd } from '../../assets/Icons';
 import './CreateTodoButton.css';
-import { TodoContext } from '../../TodoContext/TodoProvider';
+import { TodoContext } from '../../TodoProvider/TodoProvider';
 
 export function CreateTodoButton({ setOpenModal }) {
   const { setClickPosition } = useContext(TodoContext);
