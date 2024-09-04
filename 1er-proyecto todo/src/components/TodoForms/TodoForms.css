@@ -77,3 +77,21 @@
   font-weight: 600;
   margin-top: 16px;
 }
+
+.TodoForm-create-task {
+  position: relative;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  background: #144EB8;
+  box-shadow: inset 0 0 0 0 #0C2F6E;
+}
+
+.TodoForm-create-task:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 #0C2F6E;
+}
+
+.TodoForm-create-task:active {
+  transform: scale(0.9);
+}
