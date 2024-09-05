@@ -89,24 +89,31 @@ export function TodoItem({
         </p>
       </div>
       <div className="todo-item--badges">
-        <TodoBadge
-          classContainer="status-badges"
-          className={status}
-          icon={statusMap[status]?.icon}
-          valueText={statusMap[status]?.text}
-        />
-        <TodoBadge
-          classContainer="priority-badges"
-          className={priority}
-          icon={priorityMap[priority]?.icon}
-          valueText={priorityMap[priority]?.text}
-        />
-        <TodoBadge
-          classContainer="date-badges"
-          className="date"
-          icon={<IconCalendar size={24} color="var(--layout-foreground)" />}
-          valueText={dueDate}
-        />
+        {status &&
+        (
+            <TodoBadge
+              classContainer="status-badges"
+              className={status}
+              icon={statusMap[status]?.icon}
+              valueText={statusMap[status]?.text}
+            />
+          )}
+        {priority &&(
+            <TodoBadge
+              classContainer="priority-badges"
+              className={priority}
+              icon={priorityMap[priority]?.icon}
+              valueText={priorityMap[priority]?.text}
+            />
+          )}
+        {dueDate &&(
+          <TodoBadge
+            classContainer="date-badges"
+            className="date"
+            icon={<IconCalendar size={24} color="var(--layout-foreground)" />}
+            valueText={dueDate}
+          />
+        )}
         <button className="todo-item_delete" onClick={onDeleted}>
           <IconBin />
         </button>

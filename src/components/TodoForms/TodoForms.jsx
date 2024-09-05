@@ -11,7 +11,7 @@ import { TodoCalendarPicker } from '../TodoCalendarPicker/TodoCalendarPicker';
 export function TodoForm() {
   const { addTodo, setOpenModal } = useContext(TodoContext);
   const [newTodoValue, setNewTodoValue] = useState('');
-  const [selectValue, setSelectValue] = useState('todo');
+  const [selectValue, setSelectValue] = useState('');
   const [radioValue, setRadioValue] = useState('');
   const [dateValue , setDateValue] = useState('');
 
