@@ -72,14 +72,43 @@ export function TodoItem({
   return (
     <li className="todo-item">
       <div className="Todo-item--todo-task">
-        <label className={`container ${completed ? 'checked' : ''}`}>
+        <div className="checkbox-wrapper">
           <input
             type="checkbox"
             defaultChecked={completed}
             onClick={onCompleted}
+            className="check"
+            id="check1-61"
           />
-          <div className="checkmark"></div>
-        </label>
+          <label
+            className={`container ${completed ? 'checked' : ''}`}
+            for="check1-61"
+          >
+            <svg width="45" height="45" viewBox="0 0 95 95">
+              <rect
+                x="30"
+                y="15"
+                width="60"
+                height="60"
+                stroke="currentColor"
+                fill="none"
+                stroke-width="3"
+                className="square"
+                rx="15"
+                ry="15"
+              ></rect>
+              <g transform="translate(12,-955.36222)">
+                <path
+                  d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4"
+                  stroke="#14B858"
+                  stroke-width="3"
+                  fill="none"
+                  className="path1"
+                ></path>
+              </g>
+            </svg>
+          </label>
+        </div>
         <p
           className={`todo-item_text ${
             completed && 'todo-item_text--completed'
@@ -89,24 +118,23 @@ export function TodoItem({
         </p>
       </div>
       <div className="todo-item--badges">
-        {status &&
-        (
-            <TodoBadge
-              classContainer="status-badges"
-              className={status}
-              icon={statusMap[status]?.icon}
-              valueText={statusMap[status]?.text}
-            />
-          )}
-        {priority &&(
-            <TodoBadge
-              classContainer="priority-badges"
-              className={priority}
-              icon={priorityMap[priority]?.icon}
-              valueText={priorityMap[priority]?.text}
-            />
-          )}
-        {dueDate &&(
+        {status && (
+          <TodoBadge
+            classContainer="status-badges"
+            className={status}
+            icon={statusMap[status]?.icon}
+            valueText={statusMap[status]?.text}
+          />
+        )}
+        {priority && (
+          <TodoBadge
+            classContainer="priority-badges"
+            className={priority}
+            icon={priorityMap[priority]?.icon}
+            valueText={priorityMap[priority]?.text}
+          />
+        )}
+        {dueDate && (
           <TodoBadge
             classContainer="date-badges"
             className="date"
