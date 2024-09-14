@@ -20,6 +20,7 @@ export function TodoItem({
   status,
   priority,
   dueDate,
+  id
 }) {
   const statusMap = {
     todo: {
@@ -69,8 +70,12 @@ export function TodoItem({
     },
   };
 
+  const onClickTest = (event) => {
+    console.log(event)
+  }
+
   return (
-    <li className="todo-item">
+    <li className="todo-item" onClick={onClickTest}>
       <div className="Todo-item--todo-task">
         <div className="checkbox-wrapper">
           <input
@@ -78,11 +83,11 @@ export function TodoItem({
             defaultChecked={completed}
             onClick={onCompleted}
             className="check"
-            id="check1-61"
+            id={`todo-${id}`}
           />
           <label
             className={`container ${completed ? 'checked' : ''}`}
-            for="check1-61"
+            for={`todo-${id}`}
           >
             <svg width="45" height="45" viewBox="0 0 95 95">
               <rect
@@ -92,15 +97,16 @@ export function TodoItem({
                 height="50"
                 stroke="currentColor"
                 fill="none"
-                stroke-width="3"
+                strokeWidth="3"
                 className="square"
-                rx="15" ry="15"
+                rx="15"
+                ry="15"
               ></rect>
               <g transform="translate(6,-955.36222)">
                 <path
                   d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4"
                   stroke="#14B858"
-                  stroke-width="3"
+                  strokeWidth="3"
                   fill="none"
                   className="path1"
                 ></path>

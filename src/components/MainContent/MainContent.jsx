@@ -27,6 +27,7 @@ function MainContent() {
         {searchedTodos.map((todo, index) => (
           <TodoItem
             key={index}
+            id={index}
             textTodo={todo.text}
             completed={todo.completed}
             status={todo.status}
