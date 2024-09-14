@@ -7,13 +7,14 @@ import '../../variables.css';
 import { IconClose } from '../../assets/Icons';
 import { TodoRadio } from '../TodoRadio/TodoRadio';
 import { TodoCalendarPicker } from '../TodoCalendarPicker/TodoCalendarPicker';
+import Draggable from 'react-draggable';
 
 export function TodoForm() {
   const { addTodo, setOpenModal } = useContext(TodoContext);
   const [newTodoValue, setNewTodoValue] = useState('');
   const [selectValue, setSelectValue] = useState('');
   const [radioValue, setRadioValue] = useState('');
-  const [dateValue , setDateValue] = useState('');
+  const [dateValue, setDateValue] = useState('');
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -44,71 +45,96 @@ export function TodoForm() {
     console.log(event.target.value); // para verificar el valor seleccionado
   };
 
+  const { clickPosition } = useContext(TodoContext);
+  // const modalRef = useRef(null);
+
+  const handleDragStart = (event) => {
+    // Evitar el arrastre si el evento se origina en un input o botón
+    if (event.target.tagName === 'input' || event.target.tagName === 'button') {
+      event.stopPropagation();
+    }
+  };
+  
+
   return (
-    <form className="todoForm-container" onSubmit={onSubmit}>
-      <div className="TodoForm-navbar">
-        <IconClose
-          size={24}
-          color="var(--default-50)"
-          stroke={3}
-          onClick={onClickCancel}
-          className="TodoForm-close"
-        />
-        <div className="TodoForm-title">
-          <span>Add new task</span>
+    <Draggable >
+      <form
+        className="todoForm-container"
+        onSubmit={onSubmit}
+        onMouseDown={handleDragStart}
+        style={{
+          position: 'absolute',
+          top: clickPosition.y,
+          left: clickPosition.x,
+        }}
+      >
+        <div className="TodoForm-navbar">
+          <IconClose
+            size={24}
+            color="var(--default-50)"
+            stroke={3}
+            onClick={onClickCancel}
+            className="TodoForm-close"
+          />
+          <div className="TodoForm-title">
+            <span>Add new task</span>
+          </div>
         </div>
-      </div>
-      <label className="TodoForm-title2"></label>
-      <input
-        required
-        type="text"
-        placeholder="Write a new task"
-        className="TodoForm-text"
-        value={newTodoValue}
-        onChange={onChange}
-      />
-      <hr className="divider-textarea" />
-      <div>
-        <label htmlFor="date-picker">Due Date</label>
-        <TodoCalendarPicker
-          calendarNameValue={dateValue}
-          onChange={handleDateChange}
+        <label className="TodoForm-title2"></label>
+        <input
+          required
+          type="text"
+          placeholder="Write a new task"
+          className="TodoForm-text"
+          value={newTodoValue}
+          onChange={onChange}
         />
-      </div>
-      <div>
-        <label htmlFor="selector">Status</label>
-        <select id="selector" value={selectValue} onChange={handleChange}>
-          <option value="todo">To Do</option>
-          <option value="in-progress">In Progress</option>
-          <option value="completed">Completed</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="">Priority</label>
-        <TodoRadio
-          radioValue={radioValue}
-          radioNameValue="low"
-          radioName="Low"
-          onChange={handleRadioChange}
-        />
-        <TodoRadio
-          radioValue={radioValue}
-          radioNameValue="medium"
-          radioName="Medium"
-          onChange={handleRadioChange}
-        />
-        <TodoRadio
-          radioValue={radioValue}
-          radioNameValue="high"
-          radioName="High"
-          onChange={handleRadioChange}
-        />
-      </div>
-      <div className="TodoForm-button">
-        <button className="TodoForm-create-task" type="submit">
-          Create new task
-        </button>
-      </div>
-    </form>
+        <hr className="divider-textarea" />
+        <div>
+          <label htmlFor="date-picker">Due Date</label>
+          <TodoCalendarPicker
+            calendarNameValue={dateValue}
+            onChange={handleDateChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="selector">Status</label>
+          <select id="selector" value={selectValue} onChange={handleChange}>
+            <option value="" disabled>
+              Selecciona una opción
+            </option>
+            <option value="todo">To Do</option>
+            <option value="in-progress">In Progress</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="">Priority</label>
+          <TodoRadio
+            radioValue={radioValue}
+            radioNameValue="low"
+            radioName="Low"
+            onChange={handleRadioChange}
+          />
+          <TodoRadio
+            radioValue={radioValue}
+            radioNameValue="medium"
+            radioName="Medium"
+            onChange={handleRadioChange}
+          />
+          <TodoRadio
+            radioValue={radioValue}
+            radioNameValue="high"
+            radioName="High"
+            onChange={handleRadioChange}
+          />
+        </div>
+        <div className="TodoForm-button">
+          <button className="TodoForm-create-task" type="submit">
+            Create new task
+          </button>
+        </div>
+      </form>
+    </Draggable>
   );
 }

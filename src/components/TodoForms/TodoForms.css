@@ -10,6 +10,7 @@
   background-color: var(--layout-foreground);
   border-radius: 30px;
   box-shadow: 4px 4px 40px 0px var(--default-800);
+  z-index: 999;
 }
 
 .TodoForm-navbar {
@@ -35,6 +36,7 @@
   border: transparent;
   outline: none;
   background: transparent;
+  user-select: auto;
   height: auto;
   font-weight: 600;
   font-size: 20px;
