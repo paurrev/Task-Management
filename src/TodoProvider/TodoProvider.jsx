@@ -18,6 +18,10 @@ function TodoProvider({ children }) {
   const [openModal, setOpenModal] = useState(false);
   // Cantidad de ToDos completados
   const completedTodos = todos.filter((todo) => todo.completed).length;
+
+  const inProgressTodos = todos.filter((todo) => todo.status === 'in-progress').length;
+
+  const statusTODOS = todos.filter((todos) => todos.status === 'todo').length
   // Cantidad de ToDos totales
   const totalTodos = todos.length;
 
@@ -82,6 +86,8 @@ function TodoProvider({ children }) {
         addTodo,
         clickPosition,
         setClickPosition,
+        inProgressTodos,
+        statusTODOS
       }}
     >
       {children}

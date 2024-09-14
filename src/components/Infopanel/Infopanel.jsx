@@ -11,7 +11,7 @@ import { useContext } from 'react';
 import { TodoContext } from '../../TodoProvider/TodoProvider';
 
 function Infopanel() {
-  const { completedTodos, totalTodos } = useContext(TodoContext);
+  const { completedTodos, totalTodos, statusTODOS, inProgressTodos } = useContext(TodoContext);
   return (
     <section className="info-panel">
       <h1 className="info-panel--title">Task Management</h1>
@@ -37,8 +37,8 @@ function Infopanel() {
               className="info-panel--icon"
             />
           }
-          number={0}
-          description=""
+          number={statusTODOS}
+          description="To Do"
           backgroundName="todo-card--blue"
         />
         <TodoCards
@@ -50,8 +50,8 @@ function Infopanel() {
               className="info-panel--icon"
             />
           }
-          number={0}
-          description=""
+          number={inProgressTodos}
+          description="In Progress"
           backgroundName="todo-card--orange"
         />
         <TodoCards
