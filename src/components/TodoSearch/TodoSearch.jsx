@@ -8,7 +8,7 @@ function TodoSearch() {
 
   return (
     <div className="todo-search">
-      <IconSearch size={24} color="var(--layout-foreground)" stroke={3} />
+      <IconSearch size={24} color="var(--layout-foreground)" stroke={3} className='todo-search__icon' />
       <input
         className="todo-search__input"
         placeholder="Search Tasks"

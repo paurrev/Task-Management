@@ -3,13 +3,13 @@
 .todo-search {
   display: flex;
   height: 40px;
-  width: 245px;
   padding: 0px 10px;
   align-items: center;
   gap: 5px;
   flex-shrink: 0;
   border-radius: 24px;
   background: var(--default-300);
+  
 }
 .todo-search__input{
   width: 95%;
@@ -19,6 +19,16 @@
   font-weight: 600;
   line-height: normal;
   background: transparent;
+  color: var(--layout-foreground);
+  transition: width 0.3s ease-in-out;
+  
+  &:focus{
+    width: 350px;
+  }
+}
+
+.todo-search__icon{
+  flex-shrink: 0;
 }
 
 .todo-search__input::placeholder {
